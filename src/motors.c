@@ -5,45 +5,47 @@
 //BIN2 3 - PD3
 
 #include "motors.h"
+#include "macros.h"
 
-void frente(){
-    
-    set_outputs_service(AIN1);
-    clear_outputs_service(AIN2);
-    set_outputs_service(BIN1);
-    clear_outputs_service(BIN2);
+#define AIN1    PD5
+#define AIN2    PD6
+#define BIN1    PD4
+#define BIN2    PD3
 
+void frente()
+{    
+    set_bit(PORTD, AIN1);
+    clear_bit(PORTD, AIN2);
+    set_bit(PORTD, BIN1);
+    clear_bit(PORTD, BIN2);
 }
-void tras(){
-    
-    clear_outputs_service(AIN1);
-    set_outputs_service(AIN2);
-    clear_outputs_service(BIN1);
-    set_outputs_service(BIN2);
-
+void tras()
+{
+    clear_bit(PORTD, AIN1);
+    set_bit(PORTD, AIN2);
+    clear_bit(PORTD, BIN1);
+    set_bit(PORTD, BIN2);    
 }
-void freio(){
-    
-    clear_outputs_service(AIN1);
-    clear_outputs_service(AIN2);
-    clear_outputs_service(BIN1);
-    clear_outputs_service(BIN2);
+void freio()
+{
+    clear_bit(PORTD, AIN1);
+    clear_bit(PORTD, AIN2);
+    clear_bit(PORTD, BIN1);
+    clear_bit(PORTD, BIN2);   
 }
 
 void girodireita(){  
-    
-    clear_outputs_service(AIN1);
-    clear_outputs_service(AIN2);
-    set_outputs_service(BIN1);
-    clear_outputs_service(BIN2);
 
+    clear_bit(PORTD, AIN1);
+    clear_bit(PORTD, AIN2);
+    set_bit(PORTD, BIN1);
+    clear_bit(PORTD, BIN2);
 }
 
 void giroesquerda(){
     
-    set_outputs_service(AIN1);
-    clear_outputs_service(AIN2);
-    clear_outputs_service(BIN1);
-    clear_outputs_service(BIN2);
-
+    set_bit(PORTD, AIN1);
+    clear_bit(PORTD, AIN2);
+    clear_bit(PORTD, BIN1);
+    clear_bit(PORTD, BIN2);
 }
