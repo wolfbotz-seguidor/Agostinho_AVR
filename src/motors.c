@@ -6,6 +6,7 @@
 
 #include "motors.h"
 #include "macros.h"
+#include "PWM.h"
 
 #define AIN1    PD5
 #define AIN2    PD6
@@ -49,3 +50,9 @@ void giroesquerda(){
     clear_bit(PORTD, BIN1);
     clear_bit(PORTD, BIN2);
 }
+ void motor_off(){
+
+    pwm_set_duty_service(0,PWM_CHANNEL_1);
+    pwm_set_duty_service(0,PWM_CHANNEL_2);
+    freio();
+ }

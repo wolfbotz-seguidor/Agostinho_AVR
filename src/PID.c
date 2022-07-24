@@ -33,7 +33,7 @@ void acoes_de_controle(float *proporcional, float *integral, float *derivativo, 
     erroAnterior    = error;
     
 
-    *proporcional = (kp_ang[trecho]*error);  
-    *integral     = (ki_ang[trecho]*acao_integrativa);
-    *derivativo   = (kd_ang[trecho]*acao_derivativa);
+    *proporcional = (kp_ang*error);  
+    *integral     = (ki_ang*acao_integrativa);
+    *derivativo   = (kd_ang*acao_derivativa);
 }
